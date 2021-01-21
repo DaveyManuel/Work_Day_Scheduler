@@ -4,6 +4,7 @@ $( document ).ready(function() {
 
 const currentDay = moment().format('dddd, MMMM Do, YYYY');
 const currentHour = moment().hours();
+const currentTime = moment().format('h:mm a');
 const saveBtnDiv = $(".col-2")
 const saveBtn = $("button").addClass("saveBtn")
 const saveBtnIcon = $("<i>").addClass("fas fa-save saveBtn");
@@ -12,6 +13,7 @@ const saveBtnIcon = $("<i>").addClass("fas fa-save saveBtn");
 console.log(currentHour)
 
 $("#currentDay").text(currentDay);
+$("#currentTime").text(currentTime);
 
 saveBtnDiv.addClass("saveBtn");
 
@@ -21,7 +23,21 @@ saveBtn.append(saveBtnIcon);
 
 
 saveBtn.on("click", function(){
-    alert("test");
+
+    let textareaInput = $("textarea").text();
+    console.log(textareaInput)
+
+    let x = JSON.stringify($("textarea"))
+
+    localStorage.setItem(x,textareaInput);
+
+    localStorage.getItem(x);
+
+    console.log(x);
+
+    //somewhere use JSON stringify and JSONparse?
+
+
 })
 
 $("#9AM").text("9AM").addClass("hour");
