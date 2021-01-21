@@ -4,15 +4,25 @@ $( document ).ready(function() {
 
 const currentDay = moment().format('dddd, MMMM Do, YYYY');
 const currentHour = moment().hours();
-const saveBtn = $(".col-2")
+const saveBtnDiv = $(".col-2")
+const saveBtn = $("button").addClass("saveBtn")
+const saveBtnIcon = $("<i>").addClass("fas fa-save saveBtn");
 
 
 console.log(currentHour)
 
 $("#currentDay").text(currentDay);
 
-saveBtn.addClass("saveBtn");
-//add icon to saveBtn using .text?
+saveBtnDiv.addClass("saveBtn");
+
+saveBtn.append(saveBtnIcon);
+
+
+
+
+saveBtn.on("click", function(){
+    alert("test");
+})
 
 $("#9AM").text("9AM").addClass("hour");
 $("#10AM").text("10AM").addClass("hour");
