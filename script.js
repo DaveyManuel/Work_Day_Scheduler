@@ -2,6 +2,8 @@
 
 $( document ).ready(function() {
 
+//Saved const variables 
+
 const currentDay = moment().format('dddd, MMMM Do, YYYY');
 const currentHour = moment().hours();
 const currentTime = moment().format('h:mm a');
@@ -9,36 +11,17 @@ const saveBtnDiv = $(".col-2")
 const saveBtn = $("button").addClass("saveBtn")
 const saveBtnIcon = $("<i>").addClass("fas fa-save saveBtn");
 
-
-console.log(currentHour)
+//Set current day and current time to header
 
 $("#currentDay").text(currentDay);
 $("#currentTime").text(currentTime);
 
-saveBtnDiv.addClass("saveBtn");
+//Add saveBtn class to Save Button, add icon to button
 
+saveBtnDiv.addClass("saveBtn");
 saveBtn.append(saveBtnIcon);
 
-
-
-
-saveBtn.on("click", function(){
-
-    let textareaInput = $("textarea").text();
-    console.log(textareaInput)
-
-    let x = JSON.stringify($("textarea"))
-
-    localStorage.setItem(x,textareaInput);
-
-    localStorage.getItem(x);
-
-    console.log(x);
-
-    //somewhere use JSON stringify and JSONparse?
-
-
-})
+//Dynamically added hours to first column divs and added hour class
 
 $("#9AM").text("9AM").addClass("hour");
 $("#10AM").text("10AM").addClass("hour");
@@ -50,7 +33,67 @@ $("#3PM").text("3PM").addClass("hour");
 $("#4PM").text("4PM").addClass("hour");
 $("#5PM").text("5PM").addClass("hour");
 
+//dynamically add data attr to save buttons
+// $("#saveBtn9").attr("data-number", 9);
+// $("#saveBtn10").data("number", 10);
 
+$("#userInput9").val(localStorage.getItem("userInput9"));
+$("#userInput10").val(localStorage.getItem("userInput10"));
+$("#userInput11").val(localStorage.getItem("userInput11"));
+$("#userInput12").val(localStorage.getItem("userInput12"));
+
+
+// const x = localStorage.getItem('key');
+// console.log(x);
+
+
+
+
+//Functionality for Save Button
+
+$("#saveBtn9").on("click", function(){
+
+
+    // let textareaInput = $("textarea").text();
+    // console.log(textareaInput)
+
+    // let x = JSON.stringify($("textarea"))
+
+    // if ($("#userInput9")) {
+        
+    //     $("#userInput9").text = x
+    // }
+
+ 
+
+    localStorage.setItem('key',$("#userInput9").val());
+
+   
+
+
+
+    // localStorage.getItem($("#userInput9").val());
+
+    // console.log($("#userInput9").val());
+
+    // $("#userInput9") = localStorage.($("#userInput9").val());
+
+    // localStorage.getItem(JSON.parse(x));
+
+    // console.log(x);
+
+    //somewhere use JSON stringify and JSONparse?
+
+    
+    //key attr will be time grabbed from data attr
+    //value will be userinput9 .val
+
+})
+
+
+//Created variables for the data attribute of each textarea. Then I created 'if, then' statements to set class dependent on if the data number was less than, equal, or greater than the current hour of the day.  
+
+//dyanmically grab textarea and put in for if else statements. Loop through using for loop
 
 let userInput9 = $("#userInput9").data("number")
 
@@ -218,22 +261,6 @@ if (userInput17<currentHour) {
 
 //add save button
 //localStorage functionality for save button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
 
