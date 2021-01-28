@@ -14,8 +14,6 @@ const saveBtnIcon = $("<i>").addClass("fas fa-save saveBtn");
 $("#currentDay").text(currentDay);
 $("#currentTime").text(currentTime);
 
-//setInterval(change text every minute)
-
 //Add saveBtn class to Save Button, add icon to button
 
 saveBtnDiv.addClass("saveBtn");
