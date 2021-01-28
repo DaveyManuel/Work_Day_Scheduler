@@ -37,57 +37,42 @@ $("#5PM").text("5PM").addClass("hour");
 // $("#saveBtn9").attr("data-number", 9);
 // $("#saveBtn10").data("number", 10);
 
-$("#userInput9").val(localStorage.getItem("userInput9"));
-$("#userInput10").val(localStorage.getItem("userInput10"));
-$("#userInput11").val(localStorage.getItem("userInput11"));
-$("#userInput12").val(localStorage.getItem("userInput12"));
+//$("#userInput9").val(localStorage.getItem("userInput9"));
+// $("#userInput10").val(localStorage.getItem("userInput10"));
+// $("#userInput11").val(localStorage.getItem("userInput11"));
+// $("#userInput12").val(localStorage.getItem("userInput12"));
 
 
-// const x = localStorage.getItem('key');
-// console.log(x);
+$("#userInput9").val(localStorage.getItem('hour9'));
+$("#userInput10").val(localStorage.getItem('hour10'));
+$("#userInput11").val(localStorage.getItem('hour11'));
+$("#userInput12").val(localStorage.getItem('hour12'));
+$("#userInput13").val(localStorage.getItem('hour13'));
+$("#userInput14").val(localStorage.getItem('hour14'));
+$("#userInput15").val(localStorage.getItem('hour15'));
+$("#userInput16").val(localStorage.getItem('hour16'));
+$("#userInput17").val(localStorage.getItem('hour17'));
+
 
 
 
 
 //Functionality for Save Button
 
-$("#saveBtn9").on("click", function(){
-
-
-    // let textareaInput = $("textarea").text();
-    // console.log(textareaInput)
-
-    // let x = JSON.stringify($("textarea"))
-
-    // if ($("#userInput9")) {
-        
-    //     $("#userInput9").text = x
-    // }
-
+$(".saveBtn").on("click", function(){
  
 
-    localStorage.setItem('key',$("#userInput9").val());
+    localStorage.setItem('hour9',$("#userInput9").val());
+    localStorage.setItem('hour10',$("#userInput10").val());
+    localStorage.setItem('hour11',$("#userInput11").val());
+    localStorage.setItem('hour12',$("#userInput12").val());
+    localStorage.setItem('hour13',$("#userInput13").val());
+    localStorage.setItem('hour14',$("#userInput14").val());
+    localStorage.setItem('hour15',$("#userInput15").val());
+    localStorage.setItem('hour16',$("#userInput16").val());
+    localStorage.setItem('hour17',$("#userInput17").val());
 
    
-
-
-
-    // localStorage.getItem($("#userInput9").val());
-
-    // console.log($("#userInput9").val());
-
-    // $("#userInput9") = localStorage.($("#userInput9").val());
-
-    // localStorage.getItem(JSON.parse(x));
-
-    // console.log(x);
-
-    //somewhere use JSON stringify and JSONparse?
-
-    
-    //key attr will be time grabbed from data attr
-    //value will be userinput9 .val
-
 })
 
 
@@ -95,131 +80,161 @@ $("#saveBtn9").on("click", function(){
 
 //dyanmically grab textarea and put in for if else statements. Loop through using for loop
 
-let userInput9 = $("#userInput9").data("number")
 
-if (userInput9<currentHour) {
+$(".textInput").each(function() {
+
+    let x = $(this).attr("data-number")
+    console.log(x)
+
+    if (x<currentHour) {
+        $(this).addClass("past")
+    } else if (x===currentHour){
+        $(this).addClass("present")
+        $(this).removeClass("future")
+        $(this).removeClass("past")
+    } else {
+        $(this).addClass("future")
+    }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let userInput9 = $("#userInput9").data("number")
+
+// if (userInput9<currentHour) {
     
-    $("#userInput9").addClass("past")
-} else if (userInput9===currentHour){
+//     $("#userInput9").addClass("past")
+// } else if (userInput9===currentHour){
 
-    $("#userInput9").addClass("present")
+//     $("#userInput9").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput9").addClass("future")
-}
+//     $("#userInput9").addClass("future")
+// }
 
-let userInput10 = $("#userInput10").data("number")
+// let userInput10 = $("#userInput10").data("number")
 
-if (userInput10<currentHour) {
+// if (userInput10<currentHour) {
     
-    $("#userInput10").addClass("past")
-} else if (userInput10===currentHour){
+//     $("#userInput10").addClass("past")
+// } else if (userInput10===currentHour){
 
-    $("#userInput10").addClass("present")
+//     $("#userInput10").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput10").addClass("future")
-}
+//     $("#userInput10").addClass("future")
+// }
 
-let userInput11 = $("#userInput11").data("number")
+// let userInput11 = $("#userInput11").data("number")
 
-if (userInput11<currentHour) {
+// if (userInput11<currentHour) {
     
-    $("#userInput11").addClass("past")
-} else if (userInput11===currentHour){
+//     $("#userInput11").addClass("past")
+// } else if (userInput11===currentHour){
 
-    $("#userInput11").addClass("present")
+//     $("#userInput11").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput11").addClass("future")
-}
+//     $("#userInput11").addClass("future")
+// }
 
-let userInput12 = $("#userInput12").data("number")
+// let userInput12 = $("#userInput12").data("number")
 
-if (userInput12<currentHour) {
+// if (userInput12<currentHour) {
     
-    $("#userInput12").addClass("past")
-} else if (userInput12===currentHour){
+//     $("#userInput12").addClass("past")
+// } else if (userInput12===currentHour){
 
-    $("#userInput12").addClass("present")
+//     $("#userInput12").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput12").addClass("future")
-}
+//     $("#userInput12").addClass("future")
+// }
 
-let userInput13 = $("#userInput13").data("number")
+// let userInput13 = $("#userInput13").data("number")
 
-if (userInput13<currentHour) {
+// if (userInput13<currentHour) {
     
-    $("#userInput13").addClass("past")
-} else if (userInput13===currentHour){
+//     $("#userInput13").addClass("past")
+// } else if (userInput13===currentHour){
 
-    $("#userInput13").addClass("present")
+//     $("#userInput13").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput13").addClass("future")
-}
+//     $("#userInput13").addClass("future")
+// }
 
-let userInput14 = $("#userInput14").data("number")
+// let userInput14 = $("#userInput14").data("number")
 
-if (userInput14<currentHour) {
+// if (userInput14<currentHour) {
     
-    $("#userInput14").addClass("past")
-} else if (userInput14===currentHour){
+//     $("#userInput14").addClass("past")
+// } else if (userInput14===currentHour){
 
-    $("#userInput14").addClass("present")
+//     $("#userInput14").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput14").addClass("future")
-}
+//     $("#userInput14").addClass("future")
+// }
 
-let userInput15 = $("#userInput15").data("number")
+// let userInput15 = $("#userInput15").data("number")
 
-if (userInput15<currentHour) {
+// if (userInput15<currentHour) {
     
-    $("#userInput15").addClass("past")
-} else if (userInput15===currentHour){
+//     $("#userInput15").addClass("past")
+// } else if (userInput15===currentHour){
 
-    $("#userInput15").addClass("present")
+//     $("#userInput15").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput15").addClass("future")
-}
+//     $("#userInput15").addClass("future")
+// }
 
-let userInput16 = $("#userInput16").data("number")
+// let userInput16 = $("#userInput16").data("number")
 
-if (userInput16<currentHour) {
+// if (userInput16<currentHour) {
     
-    $("#userInput16").addClass("past")
-} else if (userInput16===currentHour){
+//     $("#userInput16").addClass("past")
+// } else if (userInput16===currentHour){
 
-    $("#userInput16").addClass("present")
+//     $("#userInput16").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput16").addClass("future")
-}
+//     $("#userInput16").addClass("future")
+// }
 
-let userInput17 = $("#userInput17").data("number")
+// let userInput17 = $("#userInput17").data("number")
 
-if (userInput17<currentHour) {
+// if (userInput17<currentHour) {
     
-    $("#userInput17").addClass("past")
-} else if (userInput17===currentHour){
+//     $("#userInput17").addClass("past")
+// } else if (userInput17===currentHour){
 
-    $("#userInput17").addClass("present")
+//     $("#userInput17").addClass("present")
 
-} else {
+// } else {
 
-    $("#userInput17").addClass("future")
-}
+//     $("#userInput17").addClass("future")
+// }
 
 
 
