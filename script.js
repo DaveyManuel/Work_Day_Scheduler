@@ -66,11 +66,11 @@ $(".saveBtn").on("click", function(){
 
 $(".textInput").each(function() {
 
-    let x = $(this).attr("data-number")
-
-    if (x<currentHour) {
+    let columnHour = parseInt($(this).attr("data-number"))
+    
+    if (columnHour<currentHour) {
         $(this).addClass("past")
-    } else if (x===currentHour){
+    } else if (columnHour===currentHour) {
         $(this).addClass("present")
     } else {
         $(this).addClass("future")

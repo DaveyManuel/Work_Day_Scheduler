@@ -17,4 +17,3 @@ In order to get the value inputted by the user for each column, I had to use loc
 ### Save Button Functionality
 
 Using the shared class of 'saveBtn' I used the on click function to set the value of each textarea to our local storage. The key was set to the unique key given in the previous section, and the value was set to each textarea value (text as string inputted by user).
-
