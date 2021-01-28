@@ -4,6 +4,17 @@
 
 With the completion of this assignment, I was able to implement code via HTML, CSS, and JS in order to create a work-day scheduler for a busy client. By using moment.js I grabbed the current day and current time and displayed both in the header of the planner. I created 8 columns to represent an 8 hour work day that coincides with the current hour of the day. By using the styles 'past', 'present', and 'future' I color coded each column grey, red, and green respectively. For each column when the save button is pressed, the text that is written in by the user will be saved. When the page is refreshed, the text will remain.
 
+## Deployed Link
+
+https://daveymanuel.github.io/Work_Day_Scheduler/
+
+## Screenshots
+
+<img src="./Assets/screenShot1.png">
+<img src="./Assets/screenShot2.png">
+<img src="./Assets/screenShot3.png">
+
+
 ## Logic
 
 ### If/Else for Styling Change to <textarea>
